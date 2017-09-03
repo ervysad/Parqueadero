@@ -11,7 +11,7 @@ public class HarvestTask
 	{
 		City stLouis = new City("Field.txt");
 		stLouis.showThingCounts(true);
-                Robot mark = new Robot(stLouis,0, 2, Direction.WEST);
+                Robot mark = new Robot(stLouis,0, 7, Direction.WEST);
                 		
 		mark.move ();
         	mark.move ();
