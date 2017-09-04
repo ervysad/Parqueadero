@@ -2,6 +2,9 @@ package becker;
 
 import becker.robots.*;
 
+import java.util.Scanner;
+
+
 public class DeliverParcel
 {
    public static void main(String[] args)
@@ -114,31 +117,46 @@ public class DeliverParcel
       Wall muro61 = new Wall(Parqueadero, 4, 10, Direction.SOUTH);
       Wall muro62 = new Wall(Parqueadero, 4, 11, Direction.SOUTH);
       Wall muro63 = new Wall(Parqueadero, 4, 12, Direction.SOUTH);
-
-
-      
-      
-      Robot karel1 = new Robot(Parqueadero, 6, 14, Direction.WEST,5);
-    
-      // Direct the robot to the final situation
-      karel1.move();
-      karel1.turnLeft();    	// start turning right as three turn lefts
-      karel1.turnLeft();
-      karel1.turnLeft();	// finished turning right
-      karel1.move();
-      karel1.move();
-      karel1.move();
-      karel1.move();
-      karel1.move();
-      karel1.turnLeft();	// finished turning right
-      karel1.move();
-      karel1.turnLeft();
-      karel1.turnLeft();
      
       
+      Modulos Modulo1 = new Modulos(); 
+      Modulos Modulo2 = new Modulos();
+      Modulos Modulo3 = new Modulos();
       
       
       
+       IngresarVehiculo(0, Parqueadero);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     
+   }   
+     
+   
+                     
+    public static int IngresarVehiculo(int placa, City Parqueadero) {
       
-   }
+    Scanner capt = new Scanner(System.in);
+    System.out.print("Ingrese la placa del vehiculo");
+    placa = capt.nextInt();
+    
+    Robot auto  = new Robot(Parqueadero, 6, 14, Direction.WEST, placa);
+    
+    
+    
+    return placa;
+    }
 }
+
