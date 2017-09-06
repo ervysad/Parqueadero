@@ -3,10 +3,35 @@ package becker;
 import becker.robots.*;
 
 import java.util.Scanner;
+import java.util.ArrayList; 
+import java.util.Arrays;
+import java.util.Random;
+import java.security.SecureRandom;
 
 
 public class DeliverParcel
 {
+    
+    
+    static int k=4;
+    static int j=4;
+    static int l=4;
+         // Creaciñon de un modulo equivalente a cada zona de parqueo
+    static int Modulo1[]=new int[k];
+    static int Modulo2[]=new int[j];
+    static int Modulo3[]=new int[l];
+    
+    static void llenaArreglo(){
+        // Los modulos están vacíos al incio.
+        for(int i=0;i<Modulo1.length;i++){
+            Modulo1[i]=0;
+        }
+    }
+    
+    static int elemk=0;
+    static int eleml=0;
+    static int elemj=0;
+    
    public static void main(String[] args)
    {  
      // Set up the initial situation
@@ -119,14 +144,17 @@ public class DeliverParcel
       Wall muro63 = new Wall(Parqueadero, 4, 12, Direction.SOUTH);
      
       
-      Modulos Modulo1 = new Modulos(); 
-      Modulos Modulo2 = new Modulos();
-      Modulos Modulo3 = new Modulos();
+   
       
-      
-      
+       
        IngresarVehiculo(0, Parqueadero);
-
+       
+       System.out.println(Modulo1[0]);
+       System.out.println(Modulo2[0]);
+       System.out.println(Modulo3[0]);
+       
+       IngresarVehiculo(0, Parqueadero);
+       
 
 
 
@@ -144,19 +172,145 @@ public class DeliverParcel
      
    }   
      
-   
+  static int ContarOcuapados1(){
+      for (int q = 0; q < Modulo1.length; q++) {
+          if (Modulo1[q] != 0) {
+             elemk++;
+          }
+      }
+      return elemk;
+  }
+  static int ContarOcuapados2(){
+      for (int w = 0; w < Modulo2.length; w++) {
+          if (Modulo2[w] != 0) {
+             elemj++;
+          }
+      }
+      return elemj;
+  }
+  static int ContarOcuapados3(){
+      for (int i = 0; i < Modulo1.length; i++) {
+          if (Modulo3[i] != 0) {
+              eleml++;
+          }
+      }
+      return eleml;
+  }
+  
+  
                      
     public static int IngresarVehiculo(int placa, City Parqueadero) {
-      
+    int situacion =0;
+     
     Scanner capt = new Scanner(System.in);
-    System.out.print("Ingrese la placa del vehiculo");
+    System.out.print("Ingrese la placa del vehiculo: ");
     placa = capt.nextInt();
+    Random aleatorio = new Random(System.currentTimeMillis());
+    int intAletorio = aleatorio.nextInt(100);
+    Robot auto  = new Robot(Parqueadero, 6, 14, Direction.WEST, intAletorio);
     
-    Robot auto  = new Robot(Parqueadero, 6, 14, Direction.WEST, placa);
+    ContarOcuapados1();
+    ContarOcuapados2();
+    ContarOcuapados3();
     
-    
-    
-    return placa;
+        if (elemk==elemj & elemj==eleml & elemk==eleml) {
+                 int numero = (int) (Math.random() * 3) + 1;
+                    
+                    if (numero==1) { 
+                        situacion = elemk;
+                        Modulo1[elemk] = placa;
+                    }
+                    
+                    if (numero==2) { 
+                        situacion = 5+elemj;
+                        Modulo2[elemj] = placa;
+                    }
+                    
+                    if (numero==3) { 
+                        situacion = 10+eleml;
+                        Modulo3[eleml] = placa;
+                    }
+}
+        
+        System.out.println(situacion);
+ 
+ if (situacion == 0) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+   
+ if (situacion == 5) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+ 
+ if (situacion == 10) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+ 
+ 
+ return placa;
     }
 }
 
