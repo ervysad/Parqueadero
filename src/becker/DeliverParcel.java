@@ -13,25 +13,29 @@ public class DeliverParcel
 {
     
     
-    static int k=4;
-    static int j=4;
-    static int l=4;
-         // CreaciÃ±on de un modulo equivalente a cada zona de parqueo
-    static int Modulo1[]=new int[k];
-    static int Modulo2[]=new int[j];
-    static int Modulo3[]=new int[l];
+    
+         // CreaciÃƒÂ±on de un modulo equivalente a cada zona de parqueo
+    static int Modulo1[]=new int[5];
+    static int Modulo2[]=new int[5];
+    static int Modulo3[]=new int[5];
     
     static void llenaArreglo(){
-        // Los modulos estÃ¡n vacÃ­os al incio.
+        // Los modulos estÃƒÂ¡n vacÃƒÂ­os al incio.
         for(int i=0;i<Modulo1.length;i++){
             Modulo1[i]=0;
+        }
+        for(int i=0;i<Modulo2.length;i++){
+            Modulo2[i]=0;
+        }
+        for(int i=0;i<Modulo3.length;i++){
+            Modulo3[i]=0;
         }
     }
     
     static int elemk=0;
     static int eleml=0;
     static int elemj=0;
-    
+    static int situacion = 0;
    public static void main(String[] args)
    {  
      // Set up the initial situation
@@ -145,7 +149,7 @@ public class DeliverParcel
      
       
    
-     ContarOcuapados1();
+      ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -171,13 +175,42 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
+                
+          
+           IngresarVehiculo(Parqueadero);
            
-           
+        ContarOcuapados1();
+      ContarOcuapados2();
+      ContarOcuapados3();
+       System.out.println("El numero de espacios ocupados son");
+       System.out.println(elemk);
+       System.out.println(elemj);
+       System.out.println(eleml);
+       
+           System.out.println("Modulo1");
+                System.out.println(Modulo1[0]);
+                System.out.println(Modulo1[1]);
+                System.out.println(Modulo1[2]);
+                System.out.println(Modulo1[3]);
+                System.out.println(Modulo1[4]);
+            System.out.println("Modulo2");
+                System.out.println(Modulo2[0]);
+                System.out.println(Modulo2[1]);
+                System.out.println(Modulo2[2]);
+                System.out.println(Modulo2[3]);
+                System.out.println(Modulo2[4]);
+             System.out.println("Modulo3");
+                System.out.println(Modulo3[0]);
+                System.out.println(Modulo3[1]);
+                System.out.println(Modulo3[2]);
+                System.out.println(Modulo3[3]);
+                System.out.println(Modulo3[4]);
+                
        
         
-       IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+      IngresarVehiculo(Parqueadero);
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -203,70 +236,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
-          IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
-      ContarOcuapados2();
-      ContarOcuapados3();
-       System.out.println("El numero de espacios ocupados son");
-       System.out.println(elemk);
-       System.out.println(elemj);
-       System.out.println(eleml);
-       
-           System.out.println("Modulo1");
-                System.out.println(Modulo1[0]);
-                System.out.println(Modulo1[1]);
-                System.out.println(Modulo1[2]);
-                System.out.println(Modulo1[3]);
-                System.out.println(Modulo1[4]);
-            System.out.println("Modulo2");
-                System.out.println(Modulo2[0]);
-                System.out.println(Modulo2[1]);
-                System.out.println(Modulo2[2]);
-                System.out.println(Modulo2[3]);
-                System.out.println(Modulo2[4]);
-             System.out.println("Modulo3");
-                System.out.println(Modulo3[0]);
-                System.out.println(Modulo3[1]);
-                System.out.println(Modulo3[2]);
-                System.out.println(Modulo3[3]);
-                System.out.println(Modulo3[4]);
-                
-                
-       IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
-      ContarOcuapados2();
-      ContarOcuapados3();
-       System.out.println("El numero de espacios ocupados son");
-       System.out.println(elemk);
-       System.out.println(elemj);
-       System.out.println(eleml);
-       
-           System.out.println("Modulo1");
-                System.out.println(Modulo1[0]);
-                System.out.println(Modulo1[1]);
-                System.out.println(Modulo1[2]);
-                System.out.println(Modulo1[3]);
-                System.out.println(Modulo1[4]);
-            System.out.println("Modulo2");
-                System.out.println(Modulo2[0]);
-                System.out.println(Modulo2[1]);
-                System.out.println(Modulo2[2]);
-                System.out.println(Modulo2[3]);
-                System.out.println(Modulo2[4]);
-             System.out.println("Modulo3");
-                System.out.println(Modulo3[0]);
-                System.out.println(Modulo3[1]);
-                System.out.println(Modulo3[2]);
-                System.out.println(Modulo3[3]);
-                System.out.println(Modulo3[4]);
-                
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -292,10 +264,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -321,10 +292,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -350,10 +320,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -379,10 +348,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -408,10 +376,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -437,10 +404,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -466,10 +432,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -495,10 +460,9 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
                 IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
+           
+        ContarOcuapados1();
       ContarOcuapados2();
       ContarOcuapados3();
        System.out.println("El numero de espacios ocupados son");
@@ -524,146 +488,48 @@ public class DeliverParcel
                 System.out.println(Modulo3[2]);
                 System.out.println(Modulo3[3]);
                 System.out.println(Modulo3[4]);
-                
-                IngresarVehiculo(Parqueadero);
      
-       ContarOcuapados1();
-      ContarOcuapados2();
-      ContarOcuapados3();
-       System.out.println("El numero de espacios ocupados son");
-       System.out.println(elemk);
-       System.out.println(elemj);
-       System.out.println(eleml);
-       
-           System.out.println("Modulo1");
-                System.out.println(Modulo1[0]);
-                System.out.println(Modulo1[1]);
-                System.out.println(Modulo1[2]);
-                System.out.println(Modulo1[3]);
-                System.out.println(Modulo1[4]);
-            System.out.println("Modulo2");
-                System.out.println(Modulo2[0]);
-                System.out.println(Modulo2[1]);
-                System.out.println(Modulo2[2]);
-                System.out.println(Modulo2[3]);
-                System.out.println(Modulo2[4]);
-             System.out.println("Modulo3");
-                System.out.println(Modulo3[0]);
-                System.out.println(Modulo3[1]);
-                System.out.println(Modulo3[2]);
-                System.out.println(Modulo3[3]);
-                System.out.println(Modulo3[4]);
-                
-                IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
-      ContarOcuapados2();
-      ContarOcuapados3();
-       System.out.println("El numero de espacios ocupados son");
-       System.out.println(elemk);
-       System.out.println(elemj);
-       System.out.println(eleml);
-       
-           System.out.println("Modulo1");
-                System.out.println(Modulo1[0]);
-                System.out.println(Modulo1[1]);
-                System.out.println(Modulo1[2]);
-                System.out.println(Modulo1[3]);
-                System.out.println(Modulo1[4]);
-            System.out.println("Modulo2");
-                System.out.println(Modulo2[0]);
-                System.out.println(Modulo2[1]);
-                System.out.println(Modulo2[2]);
-                System.out.println(Modulo2[3]);
-                System.out.println(Modulo2[4]);
-             System.out.println("Modulo3");
-                System.out.println(Modulo3[0]);
-                System.out.println(Modulo3[1]);
-                System.out.println(Modulo3[2]);
-                System.out.println(Modulo3[3]);
-                System.out.println(Modulo3[4]);
-                
-                IngresarVehiculo(Parqueadero);
-     
-       ContarOcuapados1();
-      ContarOcuapados2();
-      ContarOcuapados3();
-       System.out.println("El numero de espacios ocupados son");
-       System.out.println(elemk);
-       System.out.println(elemj);
-       System.out.println(eleml);
-       
-           System.out.println("Modulo1");
-                System.out.println(Modulo1[0]);
-                System.out.println(Modulo1[1]);
-                System.out.println(Modulo1[2]);
-                System.out.println(Modulo1[3]);
-                System.out.println(Modulo1[4]);
-            System.out.println("Modulo2");
-                System.out.println(Modulo2[0]);
-                System.out.println(Modulo2[1]);
-                System.out.println(Modulo2[2]);
-                System.out.println(Modulo2[3]);
-                System.out.println(Modulo2[4]);
-             System.out.println("Modulo3");
-                System.out.println(Modulo3[0]);
-                System.out.println(Modulo3[1]);
-                System.out.println(Modulo3[2]);
-                System.out.println(Modulo3[3]);
-                System.out.println(Modulo3[4]);
-
-
-
-
-
-
-
-
-
-
-
-
-     
+        
      
    }   
      
-  static int ContarOcuapados1(){
+  static void ContarOcuapados1(){
       for (int q = 0; q < Modulo1.length; q++) {
-          if (Modulo1[q] != 0) {
-             elemk++;
+          if (Modulo1[q] == 0) {
+          } else {
+              elemk=elemk+1;
           }
       }
-      return elemk;
+      
   }
-  static int ContarOcuapados2(){
+  static void ContarOcuapados2(){
       for (int w = 0; w < Modulo2.length; w++) {
-          if (Modulo2[w] != 0) {
-             elemj++;
+          if (Modulo2[w] == 0) {
+          } else {
+              elemj=elemj+1;
           }
       }
-      return elemj;
+      
   }
-  static int ContarOcuapados3(){
-      for (int i = 0; i < Modulo1.length; i++) {
-          if (Modulo3[i] != 0) {
-              eleml++;
+  static void ContarOcuapados3(){
+      for (int i = 0; i < Modulo3.length; i++) {
+          if (Modulo3[i] == 0) {
+          } else {
+              eleml=eleml+1;
           }
       }
-      return eleml;
+      
   }
   
   
-                     
-    public static int IngresarVehiculo(City Parqueadero) {
-    int situacion =0;
-    int placa; 
-    Scanner capt = new Scanner(System.in);
-    System.out.print("Ingrese la placa del vehiculo: ");
-    placa = capt.nextInt();
-    Random aleatorio = new Random(System.currentTimeMillis());
+    public static int Mover(City parqueadero){
+       
+        Random aleatorio = new Random(System.currentTimeMillis());
     int intAletorio = aleatorio.nextInt(100);
-    Robot auto  = new Robot(Parqueadero, 6, 14, Direction.WEST, intAletorio);
-    
+     Robot auto  = new Robot(parqueadero, 6, 14, Direction.WEST, intAletorio);
+        
+     
+        
     ContarOcuapados1();
     ContarOcuapados2();
     ContarOcuapados3();
@@ -673,68 +539,117 @@ public class DeliverParcel
                     
                     if (numero==1) { 
                         situacion = elemk;
-                        Modulo1[elemk] = placa;
+                        
+                        
                     }
                     
                     if (numero==2) { 
                         situacion = 5+elemj;
-                        Modulo2[elemj] = placa;
+                       
                     }
                     
                     if (numero==3) { 
                         situacion = 10+eleml;
-                        Modulo3[eleml] = placa;
+                       
+                    }
+        }
+      
+        if (elemk==elemj & elemj<eleml & elemk<eleml) {
+                 int numero = (int) (Math.random() * 2) + 1;
+                    
+                    if (numero==1) { 
+                        situacion = elemk;
+                       
+                    }
+                    
+                    if (numero==2) { 
+                        situacion = 5+elemj;
+                        
+                   
+                     }
+        }
+                    
+        if (elemk==eleml & elemk<elemj & eleml<elemj) {
+                 int numero = (int) (Math.random() * 2) + 1;
+                    
+                    if (numero==1) { 
+                        situacion = elemk;
+                       
+                    }
+                    
+                    if (numero==2) { 
+                        situacion = 10+eleml;
+                       
+                    }
+        }
+                    
+        if (eleml==elemj & elemj<elemk & eleml<elemk) {
+                 int numero = (int) (Math.random() * 2) + 1;
+                    
+                    if (numero==1) { 
+                        situacion = 10+eleml;
+                        
+                    }
+                    
+                    if (numero==2) { 
+                        situacion = 5+elemj;
+                        
                     }
         }
         
         
         
+     
         
         if (elemk<elemj & elemk<eleml & elemj==eleml) {
                  situacion=elemk;
-                 Modulo1[elemk] = placa;                  
+                               
         }
         
          if (elemk<elemj & elemk<eleml & elemj>eleml) {
                  situacion=elemk;
-                 Modulo1[elemk] = placa;                  
+                                  
         }
          
           if (elemk<elemj & elemk<eleml & elemj<eleml) {
                  situacion=elemk;
-                 Modulo1[elemk] = placa;                  
+                             
         }
           
          if (elemj<elemk & elemj<eleml & elemk==eleml) {
                  situacion=5+elemj;
-                 Modulo2[elemj] = placa;                  
+                          
         }
          
          if (elemj<elemk & elemj<eleml & elemk>eleml) {
                  situacion=5+elemj;
-                 Modulo2[elemj] = placa;                  
+                              
         }
          
          if (elemj<elemk & elemj<eleml & elemk<eleml) {
                  situacion=5+elemj;
-                 Modulo2[elemj] = placa;                  
+                                 
         }
          
          if (eleml<elemk & eleml<elemj & elemk==elemj) {
                  situacion=10+eleml;
-                 Modulo3[eleml] = placa;                  
+                        
         }
          if (eleml<elemk & eleml<elemj & elemk>elemj) {
                  situacion=10+eleml;
-                 Modulo3[eleml] = placa;                  
+                                
         }
          if (eleml<elemk & eleml<elemj & elemk<elemj) {
                  situacion=10+eleml;
-                 Modulo3[eleml] = placa;                  
+                               
         }
-        
+   
+         
+         
+    System.out.println("la situacion es =");
+        System.out.println(situacion); 
  
- if (situacion == 0) {
+        if (situacion == 0) {
      auto.move();
      auto.move();
      auto.move();
@@ -1076,5 +991,65 @@ if (situacion == 14) {
         }
  return situacion;
     }
+                     
+    public static void IngresarVehiculo(City parqueadero) {
+   
+    int placa; 
+    Scanner capt = new Scanner(System.in);
+    System.out.print("Ingrese la placa del vehiculo: ");
+    placa = capt.nextInt();
+        
+        Mover(parqueadero);
+    
+        if (situacion == 0) {
+                        Modulo1[0] =placa;
+        }
+        if (situacion == 1) {
+                        Modulo1[1] =placa;
+        }
+        if (situacion == 2) {
+                        Modulo1[2] =placa;
+        }
+        if (situacion == 3) {
+                        Modulo1[3] =placa;
+        }
+        if (situacion == 4) {
+                        Modulo1[4] =placa;
+        }
+        if (situacion == 5) {
+                        Modulo2[0] =placa;
+        }
+        if (situacion == 6) {
+                        Modulo2[1] =placa;
+        }
+        if (situacion == 7) {
+                        Modulo2[2] =placa;
+        }
+        if (situacion == 8) {
+                        Modulo2[3] =placa;
+        }
+        if (situacion == 9) {
+                        Modulo2[4] =placa;
+        }if (situacion == 10) {
+                        Modulo3[0] =placa;
+        }
+        if (situacion == 11) {
+                        Modulo3[1] =placa;
+        }
+        if (situacion == 12) {
+                        Modulo3[2] =placa;
+        }
+        if (situacion == 13) {
+                        Modulo3[3] =placa;
+        }
+        if (situacion == 14) {
+                        Modulo3[4] =placa;
+        }
+        
+    
+    
+ 
+    }
+    
 }
 
