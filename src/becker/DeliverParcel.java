@@ -16,13 +16,13 @@ public class DeliverParcel
     static int k=4;
     static int j=4;
     static int l=4;
-         // Creaciñon de un modulo equivalente a cada zona de parqueo
+         // CreaciÃ±on de un modulo equivalente a cada zona de parqueo
     static int Modulo1[]=new int[k];
     static int Modulo2[]=new int[j];
     static int Modulo3[]=new int[l];
     
     static void llenaArreglo(){
-        // Los modulos están vacíos al incio.
+        // Los modulos estÃ¡n vacÃ­os al incio.
         for(int i=0;i<Modulo1.length;i++){
             Modulo1[i]=0;
         }
@@ -145,15 +145,60 @@ public class DeliverParcel
      
       
    
-      
+      ContarOcuapados1();
+      ContarOcuapados2();
+      ContarOcuapados3();
+       System.out.println("El numero de espacios ocupados son");
+       System.out.println(elemk);
+       System.out.println(elemj);
+       System.out.println(eleml);
        
-       IngresarVehiculo(0, Parqueadero);
-       
+      System.out.println("Los modulos estan asi");
        System.out.println(Modulo1[0]);
        System.out.println(Modulo2[0]);
        System.out.println(Modulo3[0]);
        
-       IngresarVehiculo(0, Parqueadero);
+       IngresarVehiculo(Parqueadero);
+      ContarOcuapados1();
+      ContarOcuapados2();
+      ContarOcuapados3();
+       System.out.println("El numero de espacios ocupados son");
+       System.out.println(elemk);
+       System.out.println(elemj);
+       System.out.println(eleml);
+       
+      System.out.println("Los modulos estan asi");
+       System.out.println(Modulo1[0]);
+       System.out.println(Modulo2[0]);
+       System.out.println(Modulo3[0]);
+       
+       IngresarVehiculo(Parqueadero);
+        ContarOcuapados1();
+      ContarOcuapados2();
+      ContarOcuapados3();
+       System.out.println("El numero de espacios ocupados son");
+       System.out.println(elemk);
+       System.out.println(elemj);
+       System.out.println(eleml);
+       
+      System.out.println("Los modulos estan asi");
+       System.out.println(Modulo1[0]);
+       System.out.println(Modulo2[0]);
+       System.out.println(Modulo3[0]);
+       
+       IngresarVehiculo(Parqueadero); ContarOcuapados1();
+      ContarOcuapados2();
+      ContarOcuapados3();
+       System.out.println("El numero de espacios ocupados son");
+       System.out.println(elemk);
+       System.out.println(elemj);
+       System.out.println(eleml);
+       
+      System.out.println("Los modulos estan asi");
+       System.out.println(Modulo1[0]);
+       System.out.println(Modulo2[0]);
+       System.out.println(Modulo3[0]);
+       
        
 
 
@@ -199,9 +244,9 @@ public class DeliverParcel
   
   
                      
-    public static int IngresarVehiculo(int placa, City Parqueadero) {
+    public static int IngresarVehiculo(City Parqueadero) {
     int situacion =0;
-     
+    int placa; 
     Scanner capt = new Scanner(System.in);
     System.out.print("Ingrese la placa del vehiculo: ");
     placa = capt.nextInt();
@@ -230,9 +275,54 @@ public class DeliverParcel
                         situacion = 10+eleml;
                         Modulo3[eleml] = placa;
                     }
-}
+        }
         
-        System.out.println(situacion);
+        
+        
+        
+        if (elemk<elemj & elemk<eleml & elemj==eleml) {
+                 situacion=elemk;
+                 Modulo1[elemk] = placa;                  
+        }
+        
+         if (elemk<elemj & elemk<eleml & elemj>eleml) {
+                 situacion=elemk;
+                 Modulo1[elemk] = placa;                  
+        }
+         
+          if (elemk<elemj & elemk<eleml & elemj<eleml) {
+                 situacion=elemk;
+                 Modulo1[elemk] = placa;                  
+        }
+          
+         if (elemj<elemk & elemj<eleml & elemk==eleml) {
+                 situacion=5+elemj;
+                 Modulo2[elemj] = placa;                  
+        }
+         
+         if (elemj<elemk & elemj<eleml & elemk>eleml) {
+                 situacion=5+elemj;
+                 Modulo2[elemj] = placa;                  
+        }
+         
+         if (elemj<elemk & elemj<eleml & elemk<eleml) {
+                 situacion=5+elemj;
+                 Modulo2[elemj] = placa;                  
+        }
+         
+         if (eleml<elemk & eleml<elemj & elemk==elemj) {
+                 situacion=10+eleml;
+                 Modulo3[eleml] = placa;                  
+        }
+         if (eleml<elemk & eleml<elemj & elemk>elemj) {
+                 situacion=10+eleml;
+                 Modulo3[eleml] = placa;                  
+        }
+         if (eleml<elemk & eleml<elemj & elemk<elemj) {
+                 situacion=10+eleml;
+                 Modulo3[eleml] = placa;                  
+        }
+        
  
  if (situacion == 0) {
      auto.move();
@@ -261,7 +351,107 @@ public class DeliverParcel
      auto.turnLeft();
             
         }
+ 
+  if (situacion == 1) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
    
+  if (situacion == 2) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+  if (situacion == 3) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+  
+  if (situacion == 4) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
  if (situacion == 5) {
      auto.move();
      auto.move();
@@ -279,6 +469,96 @@ public class DeliverParcel
      auto.move();
      auto.move();
      auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+ 
+if (situacion == 6) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+
+if (situacion == 7) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+
+if (situacion == 8) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+
+if (situacion == 9) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
      auto.move();
      auto.turnLeft();
      auto.move();
@@ -309,8 +589,82 @@ public class DeliverParcel
             
         }
  
+  if (situacion == 11) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+  if (situacion == 12) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+  }    
+        
+if (situacion == 13) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
  
- return placa;
+if (situacion == 14) {
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.move();
+     auto.turnLeft();
+     auto.turnLeft();
+            
+        }
+ return situacion;
     }
 }
 
