@@ -14,13 +14,13 @@ public class DeliverParcel
     
     
     
-         // CreaciÃƒÂ±on de un modulo equivalente a cada zona de parqueo
+         // CreaciÃƒÆ’Ã‚Â±on de un modulo equivalente a cada zona de parqueo
     static int Modulo1[]=new int[5];
     static int Modulo2[]=new int[5];
     static int Modulo3[]=new int[5];
     
     static void llenaArreglo(){
-        // Los modulos estÃƒÂ¡n vacÃƒÂ­os al incio.
+        // Los modulos estÃƒÆ’Ã‚Â¡n vacÃƒÆ’Ã‚Â­os al incio.
         for(int i=0;i<Modulo1.length;i++){
             Modulo1[i]=0;
         }
@@ -528,14 +528,26 @@ public class DeliverParcel
     int intAletorio = aleatorio.nextInt(100);
      Robot auto  = new Robot(parqueadero, 6, 14, Direction.WEST, intAletorio);
         
-     
+      for(int i=0;i<Modulo1.length;i++){
+            Modulo1[i]=0;
+        }
+        for(int i=0;i<Modulo2.length;i++){
+            Modulo2[i]=0;
+        }
+        for(int i=0;i<Modulo3.length;i++){
+            Modulo3[i]=0;
+        }
         
     ContarOcuapados1();
     ContarOcuapados2();
     ContarOcuapados3();
     
         if (elemk==elemj & elemj==eleml & elemk==eleml) {
-                 int numero = (int) (Math.random() * 3) + 1;
+                 
+            if (elemk==5) { 
+                System.out.println("No Hay Mas Espacio"); 
+            } else{
+            int numero = (int) (Math.random() * 3) + 1;
                     
                     if (numero==1) { 
                         situacion = elemk;
@@ -1052,4 +1064,3 @@ if (situacion == 14) {
     }
     
 }
-
