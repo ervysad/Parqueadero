@@ -565,7 +565,7 @@ public class DeliverParcel
                        
                     }
         }
-      
+        }
         if (elemk==elemj & elemj<eleml & elemk<eleml) {
                  int numero = (int) (Math.random() * 2) + 1;
                     
@@ -1064,3 +1064,4 @@ if (situacion == 14) {
     }
     
 }
+
