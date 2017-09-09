@@ -12,9 +12,7 @@ import java.security.SecureRandom;
 public class DeliverParcel
 {
     
-    
-    
-         // CreaciÃƒÆ’Ã‚Â±on de un modulo equivalente a cada zona de parqueo
+   // Creacion de un modulo y un area equivalente a cada zona de parqueo
     static int Modulo1[]=new int[5];
     static int Modulo2[]=new int[5];
     static int Modulo3[]=new int[5];
@@ -38,6 +36,9 @@ public class DeliverParcel
     static int eleml=0;
     static int elemj=0;
     static int situacion = 0;
+    static int pos1 = -1;
+    static int pos2 = -1;
+    static int pos3 = -1;
    public static void main(String[] args)
    {  
      // Set up the initial situation
@@ -87,7 +88,7 @@ public class DeliverParcel
       Wall muro91 = new Wall(Parqueadero, 3, 14, Direction.EAST);
       Wall muro92 = new Wall(Parqueadero, 4, 14, Direction.EAST);
       Wall muro93 = new Wall(Parqueadero, 5, 14, Direction.EAST);
-      Wall muro94 = new Wall(Parqueadero, 6, 14, Direction.EAST);
+
     
       
       
@@ -170,7 +171,8 @@ public class DeliverParcel
                      IngresarVehiculo(Parqueadero);
                       IngresarVehiculo(Parqueadero);
                        IngresarVehiculo(Parqueadero);
-                        IngresarVehiculo(Parqueadero);
+                       
+                        
                         
           System.out.println("Area1");
                 System.out.println(Area1[0]);
@@ -190,9 +192,16 @@ public class DeliverParcel
                 System.out.println(Area3[2]);
                 System.out.println(Area3[3]);
                 System.out.println(Area3[4]);
-      
-       
                 
+                
+       SacarVehiculo(Parqueadero);
+       SacarVehiculo(Parqueadero);
+       SacarVehiculo(Parqueadero);
+       SacarVehiculo(Parqueadero);
+       SacarVehiculo(Parqueadero);
+       
+      
+ 
                 
                
         
@@ -250,8 +259,9 @@ public class DeliverParcel
     
         if (elemk==elemj & elemj==eleml & elemk==eleml) {
             
-            if (elemk==5) { 
+            if (elemk==5 & elemj==5 & eleml==5) { 
                 System.out.println("No Hay Mas Espacio"); 
+                situacion = -1;
             } else{
             int numero = (int) (Math.random() * 3) + 1;
                     
@@ -364,8 +374,7 @@ public class DeliverParcel
    
          
          
-    System.out.println("la situacion es =");
-        System.out.println(situacion); 
+   
  
         if (situacion == 0) {
      auto.move();
@@ -705,7 +714,7 @@ if (situacion == 14) {
      auto.move();
      auto.turnLeft();
      auto.turnLeft();
-            
+     
         }
  return situacion;
     }
@@ -787,6 +796,54 @@ if (situacion == 14) {
  
     }
     
+    public static void SacarVehiculo(City parqueadero){
+        
+        
+        pos1=-1;
+        pos2=-1;
+        pos3=-1;
+         int sacarplaca; 
+        Scanner capt = new Scanner(System.in);
+        System.out.print("Ingrese la placa del vehiculo a sacar: ");
+        sacarplaca = capt.nextInt(); 
+        int area; 
+        Scanner capt1 = new Scanner(System.in);
+        System.out.print("Ingrese la zona del vehiculo a sacar: ");
+        area = capt1.nextInt(); 
+        
+        if (area ==1) {
+            for (int i = 0; i < Area1.length; i++) {
+                if (Area1[i] == sacarplaca) {
+                    pos1 = i;
+                } 
+                if (pos1 == -1) { System.out.println("Este vehiculo no se encuentra estacionado en la zona 1");
+                    
+                }
+            }
+        }
+        
+        if (area ==2) {
+            for (int i = 0; i < Area2.length; i++) {
+                if (Area2[i] == sacarplaca) {
+                    pos2 = i;
+                } if (pos2 == -1) { System.out.println("Este vehiculo no se encuentra estacionado en la zona 2");}
+            }
+        }
+        
+        if (area ==3) {
+            for (int i = 0; i < Area3.length; i++) {
+                if (Area3[i] == sacarplaca) {
+                    pos3 = i;
+                } if (pos3 == -1) { System.out.println("Este vehiculo no se encuentra estacionado en la zona 3");}
+            }
+        }
+    
+    
+        System.out.println(pos1);
+        System.out.println(pos2);
+        System.out.println(pos3);
+    
+    }
 }
 
 
