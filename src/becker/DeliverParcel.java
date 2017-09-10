@@ -154,7 +154,7 @@ public class DeliverParcel
                 
                 
         
-       
+       IngresarVehiculo(Parqueadero);
         IngresarVehiculo(Parqueadero);
          IngresarVehiculo(Parqueadero);
           IngresarVehiculo(Parqueadero);
@@ -173,32 +173,13 @@ public class DeliverParcel
                        IngresarVehiculo(Parqueadero);
                        
                         
-                        
-          System.out.println("Area1");
-                System.out.println(Area1[0]);
-                System.out.println(Area1[1]);
-                System.out.println(Area1[2]);
-                System.out.println(Area1[3]);
-                System.out.println(Area1[4]);
-            System.out.println("Area2");
-                System.out.println(Area2[0]);
-                System.out.println(Area2[1]);
-                System.out.println(Area2[2]);
-                System.out.println(Area2[3]);
-                System.out.println(Area2[4]);
-             System.out.println("Area3");
-                System.out.println(Area3[0]);
-                System.out.println(Area3[1]);
-                System.out.println(Area3[2]);
-                System.out.println(Area3[3]);
-                System.out.println(Area3[4]);
-                
-                
-       SacarVehiculo(Parqueadero);
-       SacarVehiculo(Parqueadero);
-       SacarVehiculo(Parqueadero);
-       SacarVehiculo(Parqueadero);
-       SacarVehiculo(Parqueadero);
+         mostrarseccion();
+         mostrarseccion();
+         mostrarseccion();
+         mostrarseccion();
+         
+                      
+       
        
       
  
@@ -731,7 +712,6 @@ if (situacion == 14) {
       ContarOcuapados3();
         
         Mover(parqueadero);
-    
         if (situacion == 0) {
                         Modulo1[0] =placa; 
                         Area1[0]= placa;
@@ -837,12 +817,76 @@ if (situacion == 14) {
                 } if (pos3 == -1) { System.out.println("Este vehiculo no se encuentra estacionado en la zona 3");}
             }
         }
-    
+        
+        if (pos1==4) {
+            
+
+        }
     
         System.out.println(pos1);
         System.out.println(pos2);
         System.out.println(pos3);
     
+    }
+    
+    
+    public static void mostrarseccion() {
+        System.out.println("¿Cual seccion quiere ver? (1,2,3 o todas [4])");
+            
+    Scanner capt2 = new Scanner(System.in);
+    System.out.print("Ingrese la placa del vehiculo: ");
+    int muestra = capt2.nextInt();  
+        if (muestra==1) {
+              System.out.println("Area1");
+                System.out.println(Area1[0]);
+                System.out.println(Area1[1]);
+                System.out.println(Area1[2]);
+                System.out.println(Area1[3]);
+                System.out.println(Area1[4]);
+            
+        }
+        if (muestra==2) {
+              
+            System.out.println("Area2");
+                System.out.println(Area2[0]);
+                System.out.println(Area2[1]);
+                System.out.println(Area2[2]);
+                System.out.println(Area2[3]);
+                System.out.println(Area2[4]);
+             
+        }
+        
+        if (muestra==3) {
+             
+             System.out.println("Area3");
+                System.out.println(Area3[0]);
+                System.out.println(Area3[1]);
+                System.out.println(Area3[2]);
+                System.out.println(Area3[3]);
+                System.out.println(Area3[4]);
+        }
+        if (muestra==4) {
+            
+            System.out.println("Las seccion están asi:");
+              System.out.println("Area1");
+                System.out.println(Area1[0]);
+                System.out.println(Area1[1]);
+                System.out.println(Area1[2]);
+                System.out.println(Area1[3]);
+                System.out.println(Area1[4]);
+            System.out.println("Area2");
+                System.out.println(Area2[0]);
+                System.out.println(Area2[1]);
+                System.out.println(Area2[2]);
+                System.out.println(Area2[3]);
+                System.out.println(Area2[4]);
+             System.out.println("Area3");
+                System.out.println(Area3[0]);
+                System.out.println(Area3[1]);
+                System.out.println(Area3[2]);
+                System.out.println(Area3[3]);
+                System.out.println(Area3[4]);
+        }
     }
 }
 
